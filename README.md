@@ -27,7 +27,7 @@ Warning: `Please backup your modules before flashing this kernel, as all install
 - Install `KernelSU Next` from [Here](https://github.com/rifsxd/KernelSU-Next/releases)
 - Install `susfs4ksu module` from [Here](https://github.com/sidex15/susfs4ksu-module/releases)
 
-## Supported devices:
+## Supported Devices:
 
 `- All dual sim devices are also supported`
 
@@ -46,7 +46,7 @@ Warning: `Please backup your modules before flashing this kernel, as all install
 |    ✅   |   Galaxy Note10+  |     d2s    | SM-N975F/N |
 |    ❔   | Galaxy Note10+ 5G |     d2x    | SM-N976B/N |
 
-## Build instructions:
+## Build Instructions:
 
 1. Set up build environment as per Google documentation
 
