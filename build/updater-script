@@ -27,7 +27,7 @@ ui_print(" Kernel Name: oItsMineZKernel for OneUI4 (Stock Rom)");
 ui_print(" ");
 ui_print(" Kernel Author: oItsMineZ");
 ui_print(" ");
-ui_print(" Kernel Version: v1.1");
+ui_print(" Kernel Version: v1");
 ui_print(" ");
 ui_print(" Kernel for Devices: Note10 & S10 Series");
 ui_print(" ");
