@@ -51,7 +51,7 @@ Warning: `Please backup your modules before flashing this kernel, as all install
 |    ❔   |   Galaxy S10 5G   |   beyondx  | SM-G977B |
 |    ❔   |    Galaxy S10 5G (Korean)    | beyondxks | SM-G977N |
 |    ❔   |   Galaxy Note10   |     d1     | SM-N970F |
-|    ❔   |  Galaxy Note10 5G (Korean) |     d1xks    |  SM-N971N  |
+|    ❔   |  Galaxy Note10 5G (Korean) |     d1xks    |  SM-N971F/N  |
 |    ✅   |   Galaxy Note10+  |     d2s    | SM-N975F |
 |    ❔   | Galaxy Note10+ 5G |     d2x    | SM-N976B |
 |    ❔   |  Galaxy Note10+ 5G (Korean) |     d2xks    |  SM-N976N  |
