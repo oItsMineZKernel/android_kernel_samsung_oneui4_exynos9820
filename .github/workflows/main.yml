@@ -1,0 +1,77 @@
+name: Build & Release
+run-name: ${{ github.event.inputs.action }}
+
+on:
+  workflow_dispatch:
+    inputs:
+      action:
+        description: 'Action Name'
+        required: true
+      tag:
+        description: 'Release Tag'
+        required: true
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    permissions:
+      contents: write
+    strategy:
+      matrix:
+        device: [beyond0lte, beyond0lteks, beyond1lte, beyond1lteks, beyond2lte, beyond2lteks, beyondx, beyondxks, d1, d1x, d1xks, d2s, d2x, d2xks]
+
+    steps:
+      - name: Checkout Tree
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          submodules: true
+
+      - name: Setup Build Environment
+        run: |
+          sudo apt update -y
+          sudo apt install libncurses5-dev -y
+          sudo apt-get update --fix-missing && sudo apt-get install bc bison build-essential zstd clang flex gnupg gperf ccache liblz4-tool libsdl1.2-dev libstdc++6 libxml2 libxml2-utils lzop pngcrush schedtool squashfs-tools xsltproc zlib1g-dev libncurses5-dev bzip2 git gcc g++ libssl-dev openssl -y && sudo apt-get install gcc-aarch64-linux-gnu -y && sudo apt-get install gcc-arm-linux-gnueabihf -y && sudo apt-get install lld gcc-arm-linux-gnueabi llvm clang-14 clang-13 clang-12 clang-11 python2 python-is-python3 device-tree-compiler cpio -y
+          wget http://security.ubuntu.com/ubuntu/pool/universe/n/ncurses/libtinfo5_6.3-2ubuntu0.1_amd64.deb && sudo dpkg -i libtinfo5_6.3-2ubuntu0.1_amd64.deb
+          
+      - name: Set Environment Variable
+        run: |
+          echo "BUILD_KERNEL_VERSION=${{ github.event.inputs.tag }}" >> $GITHUB_ENV
+          calculatedSha=$(git rev-parse --short ${{ github.sha }})
+          echo "COMMIT_SHA=$calculatedSha" >> $GITHUB_ENV
+          
+      - name: Building Kernel
+        run: |
+            bash build.sh -m ${{ matrix.device }} -k y
+
+      - name: Upload Kernel
+        uses: actions/upload-artifact@v4
+        with:
+          name: "oItsMineZKernel-OneUI4-${{ env.BUILD_KERNEL_VERSION }}-${{ matrix.device }}-KSU-NEXT+SuSFS-${{ env.COMMIT_SHA }}"
+          path: |
+            build/export/*.zip
+
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Download All Artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: artifacts
+
+      - name: Release Build Kernel
+        uses: ncipollo/release-action@v1
+        with:
+          tag: ${{ github.event.inputs.tag }}
+          name: "${{ github.event.inputs.tag }}"
+          draft: false
+          prerelease: false
+          makeLatest: true
+          skipIfReleaseExists: true
+          token: ${{ secrets.TOKEN }}          
+          artifacts: "artifacts/**/*.zip"
+          body: "Commit SHA: ${{ github.sha }}"
