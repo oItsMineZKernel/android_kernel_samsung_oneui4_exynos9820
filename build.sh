@@ -119,6 +119,32 @@ FUNC_BUILD_KERNEL()
         echo "KSU_NEXT: $KSU_NEXT"
     fi
 
+    # International Note 10 models use older TZDEV driver
+    # Korean Note 10 models along with all S10 models (both INTL and KOR)
+    # use newer TZDEV
+    # So we will dynamically change it based on model
+    # ...Samsung...
+
+    # If model wants new TZDEV and current TZDEV is old, switch it
+    # New tzdev has an extra "umem.c" file, we check if it doesn't exist
+    if [ "$TZDEV" == "new" ] && [ ! -e "drivers/misc/tzdev/umem.c" ]; then
+        echo "Switching to new TZDEV..."
+        rm -rf drivers/misc/tzdev
+        rm -rf out/drivers/misc/tzdev
+        mkdir -p drivers/misc/tzdev
+        cp -a build/tzdev/new/* drivers/misc/tzdev
+    fi
+
+    # If model wants old TZDEV and current TZDEV is old, switch it
+    # New tzdev has an extra "umem.c" file, we check if it exists
+    if [ "$TZDEV" == "old" ] && [ -e "drivers/misc/tzdev/umem.c" ]; then
+    echo "Switching to old TZDEV..."
+        rm -rf drivers/misc/tzdev
+        rm -rf out/drivers/misc/tzdev
+        mkdir -p drivers/misc/tzdev
+        cp -a build/tzdev/old/* drivers/misc/tzdev
+    fi
+
     if [[ "$SOC" == "9825" ]]; then
         N10=exynos9825.config
     fi
@@ -254,6 +280,7 @@ FUNC_BUILD_ZIP()
 
     rm -rf $RDIR/build/ramdisk/fstab.exynos9820
     rm -rf $RDIR/build/ramdisk/fstab.exynos9825
+    rm -rf $RDIR/drivers/misc/tzdev
 }
 
 # MAIN FUNCTION
