@@ -280,7 +280,6 @@ FUNC_BUILD_ZIP()
 
     rm -rf $RDIR/build/ramdisk/fstab.exynos9820
     rm -rf $RDIR/build/ramdisk/fstab.exynos9825
-    rm -rf $RDIR/drivers/misc/tzdev
 }
 
 # MAIN FUNCTION
