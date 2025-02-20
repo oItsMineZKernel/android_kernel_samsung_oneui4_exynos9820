@@ -14,7 +14,7 @@ Stock OneUI4 `(S9 Binary)` Kernel with KernelSU Next & SuSFS Based on [ExtremeKe
 
 ## Tested On
 
-- [Dr.Ketan ROM - S09]](https://xdaforums.com/t/31-07-24-i-n975f-i-n976b-i-n976n-i-n970f-i-dr-ketan-rom-i-oneui-4-1-i-oneui-3-1.3962839) - Based on N975FXX`S9`HWHA `(S9 Binary)`
+- [Dr.Ketan ROM - S09](https://xdaforums.com/t/31-07-24-i-n975f-i-n976b-i-n976n-i-n970f-i-dr-ketan-rom-i-oneui-4-1-i-oneui-3-1.3962839) - Based on N975FXX`S9`HWHA `(S9 Binary)`
 
 ## Known Issue
 
