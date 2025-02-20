@@ -39,6 +39,7 @@
 *.symtypes
 *.tar
 *.xz
+*.log
 Module.symvers
 modules.builtin
 
@@ -125,3 +126,15 @@ all.config
 
 # fetched Android config fragments
 kernel/configs/android-*.cfg
+
+# Auxiliary build files
+build/export/
+build/out/
+out/
+
+# Python cache
+scripts/crypto/__pycache__/
+scripts/fmp/__pycache__/
+
+# tsp_sec
+!firmware/tsp_sec/*

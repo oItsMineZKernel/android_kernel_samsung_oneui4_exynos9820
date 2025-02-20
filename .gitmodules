@@ -4,3 +4,7 @@
 [submodule "toolchain/aarch64-linux-android-4.9"]
 	path = toolchain/aarch64-linux-android-4.9
 	url = https://github.com/LineageOS/android_prebuilts_gcc_linux-x86_aarch64_aarch64-linux-android-4.9
+[submodule "KernelSU-Next"]
+	path = KernelSU-Next
+	url = https://github.com/oItsMineZ/KernelSU-Next
+	branch = susfs-v1.5.5
