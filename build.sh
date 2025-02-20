@@ -47,23 +47,39 @@ beyond0lte)
     SOC=9820
     BOARD=SRPRI28A014KU
 ;;
+beyond0lteks)
+    SOC=9820
+    BOARD=SRPRI28C007KU
+;;
 beyond1lte)
     SOC=9820
     BOARD=SRPRI28B014KU
+;;
+beyond1lteks)
+    SOC=9820
+    BOARD=SRPRI28D007KU
 ;;
 beyond2lte)
     SOC=9820
     BOARD=SRPRI17C014KU
 ;;
+beyond2lteks)
+    SOC=9820
+    BOARD=SRPRI28E007KU
+;;
 beyondx)
     SOC=9820
     BOARD=SRPSC04B011KU
+;;
+beyondxks)
+    SOC=9820
+    BOARD=SRPRK21D006KU
 ;;
 d1)
     SOC=9825
     BOARD=SRPSD26B007KU
 ;;
-d1x)
+d1xks)
     SOC=9825
     BOARD=SRPSD23A002KU
 ;;
@@ -74,6 +90,10 @@ d2s)
 d2x)
     SOC=9825
     BOARD=SRPSC14C007KU
+;;
+d2xks)
+    SOC=9825
+    BOARD=SRPSD23C002KU
 ;;
 *)
     unset_flags
