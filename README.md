@@ -65,7 +65,7 @@ Warning: `Please backup your modules before flashing this kernel, as all install
 
    <a href="https://source.android.com/docs/setup/start/requirements" target="_blank">https://source.android.com/docs/setup/start/requirements</a>
 
-2. Properly clone repository with submodules (KernelSU Next)
+2. Properly clone repository with submodules (Toolchains & KernelSU Next)
 
 ```html
 git clone --recurse-submodules https://github.com/oItsMineZ/oItsMineZKernel-OneUI6.git
