@@ -18,9 +18,6 @@ Stock OneUI4 `(S9 Binary)` Kernel with KernelSU Next & SuSFS Based on [ExtremeKe
 
 ## Known Issue
 
-- **Random Bootloop when restart device**
--- There's a change can cause a **bootloop** when restarting. To fix this, press the `Vol down` `+` `Power button (Bixby key)`, and hold until the **splash logo appears**. Keep trying until it boots to the **homescreen**.
-
 - **Work on S9 binary rom only**
 -- This kernel is based on binary `S9`. If you try to install it on rom with older binary version `S8`, it will cause a bootloop.
 
