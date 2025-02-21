@@ -46,54 +46,67 @@ case $MODEL in
 beyond0lte)
     SOC=9820
     BOARD=SRPRI28A014KU
+    TZDEV=new
 ;;
 beyond0lteks)
     SOC=9820
     BOARD=SRPRI28C007KU
+    TZDEV=new
 ;;
 beyond1lte)
     SOC=9820
     BOARD=SRPRI28B014KU
+    TZDEV=new
 ;;
 beyond1lteks)
     SOC=9820
     BOARD=SRPRI28D007KU
+    TZDEV=new
 ;;
 beyond2lte)
     SOC=9820
     BOARD=SRPRI17C014KU
+    TZDEV=new
 ;;
 beyond2lteks)
     SOC=9820
     BOARD=SRPRI28E007KU
+    TZDEV=new
 ;;
 beyondx)
     SOC=9820
     BOARD=SRPSC04B011KU
+    TZDEV=new
 ;;
 beyondxks)
     SOC=9820
     BOARD=SRPRK21D006KU
+    TZDEV=new
 ;;
 d1)
     SOC=9825
     BOARD=SRPSD26B007KU
+    TZDEV=old
 ;;
 d1xks)
     SOC=9825
     BOARD=SRPSD23A002KU
+    TZDEV=new
 ;;
 d2s)
     SOC=9825
     BOARD=SRPSC14B007KU
+    TZDEV=old
 ;;
 d2x)
     SOC=9825
     BOARD=SRPSC14C007KU
+    TZDEV=old
 ;;
 d2xks)
     SOC=9825
     BOARD=SRPSD23C002KU
+    TZDEV=new
 ;;
 *)
     unset_flags
